@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국외대 캠퍼스 통합 맛집 지도</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #142B40; /* 배경을 #142B40으로 변경 */
+            color: #FFF; /* 기본 글자색은 흰색 */
+        }
+        h1 {
+            margin-bottom: 5px;
+            color: #A67B56; /* 제목 색상 변경 */
+            font-size: 2em; /* 제목 크기 */
+        }
+        .subtitle-main {
+            color: #A67B56;
+            font-size: 1em; /* 제목보다 작게 */
+            margin-bottom: 5px;
+        }
+        .subtitle2 {
+            color:  #A67B56; 
+            font-size: 0.5em; /* 글자 크기를 절반으로 줄임 */
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        /* 기존 버튼 크기 유지하며 배경색과 글자색 반전 */
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #A67B56; /* 기존 배경색을 글자색으로 */
+            background-color: white; /* 기존 글자색을 배경색으로 */
+            border: 2px solid #A67B56;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #F5F5F5; /* hover 시 더 밝은 색 */
+        }
+        /* 개발자 정보 버튼은 절반 크기로 줄이면서 색 반전 */
+        .small-button {
+            padding: 7px 15px; /* 기존 크기의 절반으로 */
+            font-size: 14px;
+            color: white; /* 글자색을 흰색으로 */
+            background-color: #A67B56; /* 배경을 원래 색으로 */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .small-button:hover {
+            background-color: #8B5E3C;
+        }
+        .logo {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>한국외대 맛집 지도</h1>
+    <hr>
+    <p class="subtitle-main">HUFS Restaurant Guide Map</p>
+    
+    <br>
+    <!-- 로고 이미지 추가 -->
+    <img src="외대로고3.png" alt="한국외대 로고" class="logo" width="150">
+
+    <div class="button-container">
+        <a href="https://koh-hongq.github.io/HUFS_Restaurant_Guide/%EB%A7%9B%EC%A7%91%EC%84%9C%EC%9A%B8%EC%BA%A04%ED%83%84.html" class="button">Seoul<br>Campus</a>
+        <a href="https://koh-hongq.github.io/HUFS_Restaurant_Guide/%EB%A7%9B%EC%A7%91%EA%B8%80%EB%A1%9C%EB%B2%8C%EC%BA%A06%ED%83%84.html" class="button">Global<br>Campus</a>
+    </div>
+    
+    <p class="subtitle2">본 페이지는 상업적 목적이 아님을 밝힙니다. <br> 개발자 본인이 매번 맛집 검색하기가 귀찮아서 만들었습니다.<br>맛집 선정에는 외대생들의 개인 취향이 반영되었습니다.</p>
+
+    <!-- 개발자 정보 버튼 추가 -->
+    <div class="button-container">
+        <a href="https://koh-hongq.github.io/HUFS_Restaurant_Guide/%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%A0%95%EB%B3%B4" class="small-button">개발자 정보<br>Developer</a>
+    </div>
+</body>
+</html>
+
+

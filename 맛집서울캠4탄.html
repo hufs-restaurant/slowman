@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>외대 서울 맛집</title>
+    <style>
+        /* 전체 화면을 차지하도록 스타일 조정 */
+        .tableauPlaceholder {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .tableauViz {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class='tableauPlaceholder' id='vizContainer'>
+        <noscript>
+            <a href='#'><img alt='외대서울맛집4탄' src='https://public.tableau.com/static/images/Z8/Z8JSHJB8H/1_rss.png' style='border: none' /></a>
+        </noscript>
+        <object class='tableauViz' id='tableauVizObj'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='path' value='shared&#47;Z8JSHJB8H' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Z8/Z8JSHJB8H/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='ko-KR' />
+        </object>
+    </div>
+
+    <script type='text/javascript'>
+        function resizeTableau() {
+            let vizElement = document.getElementById('tableauVizObj');
+            let container = document.getElementById('vizContainer');
+            
+            // 부모 요소 크기에 맞추기
+            vizElement.style.width = container.clientWidth + 'px';
+            vizElement.style.height = container.clientHeight + 'px';
+        }
+
+        // 창 크기 변경 시 리사이징 적용
+        window.addEventListener('resize', resizeTableau);
+
+        // 초기 로딩 시 크기 조정
+        document.addEventListener('DOMContentLoaded', function () {
+            resizeTableau();
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            document.body.appendChild(scriptElement);
+        });
+    </script>
+</body>
+</html>
