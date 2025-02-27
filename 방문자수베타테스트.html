@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방문자 수 카운터</title>
+    <style>
+        #visitor-banner {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="visitor-banner">방문자 수: <span id="visitor-count">0</span></div>
+
+    <script>
+        // LocalStorage에 방문자 수 저장
+        let visitCount = localStorage.getItem("visitCount");
+
+        if (!visitCount) {
+            visitCount = 1;
+        } else {
+            visitCount = parseInt(visitCount) + 1;
+        }
+
+        localStorage.setItem("visitCount", visitCount);
+        document.getElementById("visitor-count").textContent = visitCount;
+    </script>
+</body>
+</html>
