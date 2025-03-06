@@ -76,9 +76,26 @@
     <br>
 
     <p class="dev">오늘 메뉴 추천</p>
+    
+    <!-- 랜덤 메뉴 버튼 -->
+    <button class="small-button2" onclick="pickRandomMenuGlobal()">Global Campus</button>
+    <p id="menu-result"></p>
+    
+
+
+    
    
     <!-- 메인으로 가는 버튼 -->
     <a href="https://hufs-restaurant.github.io/slowman/%EB%A7%9B%EC%A7%91%EC%99%B8%EB%8C%80%ED%86%B5%ED%95%A93%ED%83%84.html" class="small-button2">Back</a>
+
+
+    <script>
+        function pickRandomMenuGlobal() {
+            const menus = ["a", "b", "c"];
+            const randomIndex = Math.floor(Math.random() * menus.length);
+            document.getElementById("menu-result").textContent =  menus[randomIndex];
+        }
+    </script>
 
 </body>
 </html>
