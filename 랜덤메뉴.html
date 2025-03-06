@@ -64,6 +64,20 @@
         .small-button2:hover {
             background-color: #8B5E3C;
         }
+/*         랜덤버튼 */
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #A67B56; /* 기존 배경색을 글자색으로 */
+            background-color: white; /* 기존 글자색을 배경색으로 */
+            border: 2px solid #A67B56;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #F5F5F5; /* hover 시 더 밝은 색 */
+        }
        
        
     </style>
@@ -78,7 +92,7 @@
     <p class="dev">오늘 메뉴 추천</p>
     
     <!-- 랜덤 메뉴 버튼 -->
-    <button class="small-button2" onclick="pickRandomMenuGlobal()">Global Campus</button>
+    <button class="button" onclick="pickRandomMenuGlobal()">Global Campus</button>
     <p id="menu-result"></p>
     
 
