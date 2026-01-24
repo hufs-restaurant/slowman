@@ -1,0 +1,49 @@
+name: Auto Crawl Restaurants
+
+on:
+  schedule:
+    # 매주 일요일 새벽 2시 (UTC 기준, 한국시간 오전 11시)
+    - cron: '0 2 * * 0'
+  workflow_dispatch:  # 수동 실행도 가능
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium
+          playwright install-deps
+      
+      - name: Run crawler
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python crawler_agent.py
+      
+      - name: Validate and clean data
+        run: |
+          python data_validator.py
+      
+      - name: Convert to CSV for Tableau
+        run: |
+          python tableau_converter.py
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add restaurants_*.json restaurants_*.csv
+          git diff --staged --quiet || git commit -m "Auto update restaurant data [skip ci]"
+          git push
+
