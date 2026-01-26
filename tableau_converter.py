@@ -101,3 +101,5 @@ if __name__ == "__main__":
     merge_campus_data("restaurants_seoul.json", "restaurants_global.json", "restaurants_all.json")
     json_to_csv("restaurants_all.json", "restaurants_all.csv")
 
+
+

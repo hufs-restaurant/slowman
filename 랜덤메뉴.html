@@ -1,130 +1,218 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국외대 캠퍼스 통합 맛집 지도</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-            background-color: #142B40; /* 배경을 #142B40으로 변경 */
-            color: #FFF; /* 기본 글자색은 흰색 */
-        }
-        h1 {
-            margin-bottom: 5px;
-            color: #A67B56; /* 제목 색상 변경 */
-            font-size: 2em; /* 제목 크기 */
-        }
-        .dev {
-            margin-bottom: 5px;
-            color: #A67B56; /* 제목 색상 변경 */
-            font-size: 2em; /* 제목 크기 */
-        }
-        .dev3 {
-            color: #A67B56; /* 제목 색상 변경 */
-            font-size: 1em; /* 제목 크기 */
-        }
-        .subtitle-main {
-            color: #A67B56;
-            font-size: 1em; /* 제목보다 작게 */
-            margin-bottom: 5px;
-        }
-        .subtitle2 {
-            color:  #A67B56; 
-            font-size: 0.5em; /* 글자 크기를 절반으로 줄임 */
-        }
-        .subtitle3 {
-            color:  white; 
-            font-size: 1em; /* 글자 크기를 절반으로 줄임 */
-            
-            text-align: left; /* 왼쪽 정렬 */
-        }
-        /* SlowMan 스타일 */
-        .developer-name {
-            font-size: 2em; /* 글자 크기 2배 */
-            color: white;
-            text-align: left; /* 왼쪽 정렬 */
-        }
-        /* Contact & 메인 버튼 스타일 */
-        
-        .small-button2 {
-            padding: 14px 30px; /* 기존 크기의 절반으로 */
-            font-size: 18px;
-            color: white; /* 글자색을 흰색으로 */
-            background-color: #A67B56; /* 배경을 원래 색으로 */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block; /* 버튼 정렬 */
-            margin-top: 10px;
-        }
-        .small-button2:hover {
-            background-color: #8B5E3C;
-        }
-/*         랜덤버튼 */
-        .button {
-            padding: 15px 30px;
-            font-size: 18px;
-            color: #A67B56; /* 기존 배경색을 글자색으로 */
-            background-color: white; /* 기존 글자색을 배경색으로 */
-            border: 2px solid #A67B56;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .button:hover {
-            background-color: #F5F5F5; /* hover 시 더 밝은 색 */
-        }
-       
-       
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>랜덤 메뉴 추천 | 한국외대 맛집 지도</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/common.css">
+  <script src="js/restaurant-utils.js" defer></script>
+  <style>
+    .random-menu-section {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .menu-title {
+      color: var(--hufs-gold);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .campus-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .campus-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid var(--hufs-gold);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .campus-card h3 {
+      color: var(--hufs-gold);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .menu-button {
+      background: var(--hufs-green);
+      color: var(--hufs-white);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-button:hover {
+      background: var(--hufs-green-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 107, 60, 0.4);
+    }
+
+    .menu-button:active {
+      transform: translateY(0);
+    }
+
+    .menu-result {
+      background: rgba(212, 175, 55, 0.2);
+      border: 2px solid var(--hufs-gold);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 1.5rem;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--hufs-gold);
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.5s ease;
+    }
+
+    .menu-result.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .menu-result.empty::before {
+      content: "👆 버튼을 클릭하여 랜덤 메뉴를 뽑아보세요!";
+      color: var(--hufs-silver);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .menu-result:not(.empty) {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .menu-result:not(.empty):hover {
+      background: rgba(212, 175, 55, 0.3);
+      transform: scale(1.02);
+    }
+
+    .menu-result:not(.empty)::after {
+      content: " 👆 클릭하면 상세 정보를 볼 수 있습니다";
+      font-size: 0.8rem;
+      color: var(--hufs-silver);
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .back-button {
+      text-align: center;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>한국외대 맛집 지도</h1>
-    <hr>
-    <p class="subtitle-main">HUFS Restaurant Guide Map</p>
-    
-    <br>
+  <!-- 헤더 -->
+  <header class="header">
+    <a href="맛집외대통합3탄.html" class="header-logo">
+      <img src="외대로고3.png" alt="한국외대 로고" loading="lazy">
+      <span class="header-title">랜덤 메뉴 추천</span>
+    </a>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="맛집외대통합3탄.html">홈</a></li>
+        <li><a href="맛집서울캠5탄_지도확대.html">서울캠</a></li>
+        <li><a href="맛집글로벌캠6탄.html">글로벌캠</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <p class="dev">오늘 메뉴 추천</p>
-    <br><br>
-    <!-- 랜덤 메뉴 버튼 -->
+  <!-- 메인 컨텐츠 -->
+  <main class="main-container">
+    <section class="random-menu-section">
+      <h1 class="menu-title">🍽️ 오늘 뭐 먹지?</h1>
+      <p class="text-center text-silver" style="margin-bottom: 2rem;">랜덤으로 맛집을 추천해드립니다!</p>
 
-    <button class="button" onclick="pickRandomMenuSeoul()">Seoul<br>Campus</button>
-    <p id="menu-result1"></p>
-    
-    <button class="button" onclick="pickRandomMenuGlobal()">Global<br>Campus</button>
-    <p id="menu-result2"></p>
+      <!-- 검색 기능 -->
+      <div class="search-container">
+        <div class="search-box">
+          <input type="text" id="restaurant-search" class="search-input" placeholder="맛집 이름 또는 카테고리로 검색...">
+          <span class="search-icon">🔍</span>
+        </div>
+        <div id="search-results" class="search-results"></div>
+        <div id="no-results" class="no-results">검색 결과가 없습니다.</div>
+      </div>
 
+      <div class="campus-selector">
+        <div class="campus-card">
+          <h3>Seoul Campus</h3>
+          <button class="menu-button" onclick="pickRandomMenuSeoul()">
+            🎲 랜덤 뽑기
+          </button>
+          <div id="menu-result1" class="menu-result empty"></div>
+        </div>
 
+        <div class="campus-card">
+          <h3>Global Campus</h3>
+          <button class="menu-button" onclick="pickRandomMenuGlobal()">
+            🎲 랜덤 뽑기
+          </button>
+          <div id="menu-result2" class="menu-result empty"></div>
+        </div>
+      </div>
 
-    
-   
-    <!-- 메인으로 가는 버튼 -->
-    <a href="https://hufs-restaurant.github.io/slowman/%EB%A7%9B%EC%A7%91%EC%99%B8%EB%8C%80%ED%86%B5%ED%95%A93%ED%83%84.html" class="small-button2">Back</a>
+      <div class="back-button">
+        <a href="맛집외대통합3탄.html" class="btn btn-secondary">🏠 홈으로 돌아가기</a>
+      </div>
+    </section>
+  </main>
 
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>한국외국어대학교 맛집 가이드</p>
+    </div>
+    <div class="footer-links">
+      <a href="맛집외대통합3탄.html">홈으로</a>
+      <a href="개발자정보.html">개발자 정보</a>
+    </div>
+  </footer>
 
-    <script>
-        function pickRandomMenuSeoul() {
-            const menus = ["꾸니꾸니","코로코로","이문동신냉면","옛날할머니보쌈","돼지왕","스시고이","라무진 회기점","회기돈","락식락당 경희대점","사나이뚝배기 경희대점","봉추찜닭 경희대점","우차이","마구로준","스타동 경희대점","현방촌","홍콩대패당","시키카츠","회태랑사골마라탕","호랑이도삭면","회기왕족발보쌈","솔낭구","참이맛감자탕 경희대점","히노하루","샤브로21 경희대","모코모코","심양 경희대점","고기하다","명랑부대찌개 외대점","스시캘리포니아","337냉삼겹","에잇올리","푸른하늘","이도감식당","오븐마루치킨 외대점","싸움의고수 외대점","도읍지","매스플레이트 회기점","신의주순대와쭈꾸미 외대역점","타코비&치즈볼 한국외대점","한솥도시락 외대정문점","빽보이피자 외대앞점","한솥도시락 외대점","59년옛날통닭","밀플랜비","만이","삼칠공","카빙당","성화금탕마라탕&튀김꼬치","도미노피자 이문점","수유리우동집 외대점","서가네 정육식당 본점","고씨네 한국외대점","투고샐러드 한국외국어대점","운남쌀국수","치킨에꼬치다 외대역점","샤로스톤 외대점","이문족발","컵짱이야 외대본점","통일부대찌개","일층집","띵하우","이소","시골집","장수식당","대한왕뼈구이감자탕","닭치고한잔 본점","마포생주먹고기","정성서울국수집 외대본점","골드케밥 이문점","미스사이공 외대점","토담마을","와까리꽁","탕화쿵푸마라탕 외대점","청년김치찌개","샐러드 앤 포케","번패티번 외대점","롯데리아 외대역점","이문동그집 회기역직영점","인생설렁탕 경희대점","해나루초밥","참다랑어","삼복한방닭한마리","오관스시","뜰아래","굿갓레스토랑 회기점","코타","지지고 외대후문점","카페115","회기버거 본점","프랭크버거 외대역점","맘스터치 서울외대점","버거운버거 서울경희대점","맥도날드 외대점","일품춘천닭갈비","본가할머니보쌈","진미생고기전문점","맛닭꼬 경희대점","경성고기꾼","고황24시뼈다귀해장국감자탕","모두랑즉석떡볶이","여기가좋겠네","꽃돼지무한삼겹 경희대점","홍익짬뽕 경희대직영점","153스트리트","오늘통닭 외대점","후루사토","휘경짬뽕","송원","어흥식당 경희대점","멍군집","이령김밥","이문동그집 본점","레알라면","온센 동대문구점","영카츠 외대점","꼬기92","화덕고 외대앞본점","김곳간","등촌샤브칼국수 경희대점","고기야미안해","벗이있는집","비스트로99","카시와","BS라멘&돈부리","외대매운돈코츠라멘","꿀꿀이닭갈비","Bun99","탐스타코","매콤화담쭈꾸미","미가돈까스","버텍스미국식덮밥 회기점","차칸스시","언니네함바그","버드나무순대국","치맥파이브 회기점","39돈가스","간편식탁","키친요로시쿠","라구퀸","명가식당","도란도란곱창","육회바른연어 외대점","허브영양족발","헤이마오차이 외대점","본죽&비빔밥cafe 외대점","고흥소곱창&부추생삼겹살","차돌풍 외대점","닭전문홍백집","예향칼국수","치보","외대감자탕 외대점","춘리마라탕 외대점","미니멀샐러드","주수사","뜸들이다 회기점","글라라스푼","돈통무한리필 휘경점","회기왕갈비탕","우시라멘","이상한떡볶이집","밀모","할미국밥","사천면가","구기우육도삭면","돈수백 외대점","해장국감자탕","국빈","홍콩반점0410 외대점","이상준초밥","아욱꽃","오색식당","산과들그리고달","핵밥 한국외대점","아지매식당","숯불꼼닭발","선이네수제순대국","다해식당","옹골진치킨 외대점","써브웨이 외대점","아리랑동가스","마살라키친","씨마트 외대본점","오뚜기부대찌개","코코니주방","KFC 한국외대점","이문시장","마루기","올떡 외대점","일촌분식","행복한한끼","자연밥상","두끼떡볶이 한국외대점","촨커","몬스터플레이스 이문점","알촌 경희외대직영점","영화장","파치 외대점","서울치즈피자 외대점","할머니보쌈","153구포국수","브릴란테","돈카츠앤우동돼랑이우랑이","해신루","진성각","홍곱창","이터스멕시칸","무초타코","라면팜","깐띤","광주회관","금수저함바식당","주연푸드","호헌장담","왕송","고흥소곱창부추삼겹살","20년전통외대닭갈비","해성닭한마리","멕시카나치킨 이문점","가마로강정","만이차이니즈퀴진","베트남태양","KAN한베식먹어보자","피자헛 외대2호","파파존스","피자스쿨","이삭토스트","교수회관식당","인문관식당"];
-            const randomIndex = Math.floor(Math.random() * menus.length);
-            document.getElementById("menu-result1").textContent =  menus[randomIndex];
-        }
-    </script>
+  <script>
+    function pickRandomMenuSeoul() {
+      const menus = ["꾸니꾸니", "코로코로", "이문동신냉면", "옛날할머니보쌈", "돼지왕", "스시고이", "라무진 회기점", "회기돈", "락식락당 경희대점", "사나이뚝배기 경희대점", "봉추찜닭 경희대점", "우차이", "마구로준", "스타동 경희대점", "현방촌", "홍콩대패당", "시키카츠", "회태랑사골마라탕", "호랑이도삭면", "회기왕족발보쌈", "솔낭구", "참이맛감자탕 경희대점", "히노하루", "샤브로21 경희대", "모코모코", "심양 경희대점", "고기하다", "명랑부대찌개 외대점", "스시캘리포니아", "337냉삼겹", "에잇올리", "푸른하늘", "이도감식당", "오븐마루치킨 외대점", "싸움의고수 외대점", "도읍지", "매스플레이트 회기점", "신의주순대와쭈꾸미 외대역점", "타코비&치즈볼 한국외대점", "한솥도시락 외대정문점", "빽보이피자 외대앞점", "한솥도시락 외대점", "59년옛날통닭", "밀플랜비", "만이", "삼칠공", "카빙당", "성화금탕마라탕&튀김꼬치", "도미노피자 이문점", "수유리우동집 외대점", "서가네 정육식당 본점", "고씨네 한국외대점", "투고샐러드 한국외국어대점", "운남쌀국수", "치킨에꼬치다 외대역점", "샤로스톤 외대점", "이문족발", "컵짱이야 외대본점", "통일부대찌개", "일층집", "띵하우", "이소", "시골집", "장수식당", "대한왕뼈구이감자탕", "닭치고한잔 본점", "마포생주먹고기", "정성서울국수집 외대본점", "골드케밥 이문점", "미스사이공 외대점", "토담마을", "와까리꽁", "탕화쿵푸마라탕 외대점", "청년김치찌개", "샐러드 앤 포케", "번패티번 외대점", "롯데리아 외대역점", "이문동그집 회기역직영점", "인생설렁탕 경희대점", "해나루초밥", "참다랑어", "삼복한방닭한마리", "오관스시", "뜰아래", "굿갓레스토랑 회기점", "코타", "지지고 외대후문점", "카페115", "회기버거 본점", "프랭크버거 외대역점", "맘스터치 서울외대점", "버거운버거 서울경희대점", "맥도날드 외대점", "일품춘천닭갈비", "본가할머니보쌈", "진미생고기전문점", "맛닭꼬 경희대점", "경성고기꾼", "고황24시뼈다귀해장국감자탕", "모두랑즉석떡볶이", "여기가좋겠네", "꽃돼지무한삼겹 경희대점", "홍익짬뽕 경희대직영점", "153스트리트", "오늘통닭 외대점", "후루사토", "휘경짬뽕", "송원", "어흥식당 경희대점", "멍군집", "이령김밥", "이문동그집 본점", "레알라면", "온센 동대문구점", "영카츠 외대점", "꼬기92", "화덕고 외대앞본점", "김곳간", "등촌샤브칼국수 경희대점", "고기야미안해", "벗이있는집", "비스트로99", "카시와", "BS라멘&돈부리", "외대매운돈코츠라멘", "꿀꿀이닭갈비", "Bun99", "탐스타코", "매콤화담쭈꾸미", "미가돈까스", "버텍스미국식덮밥 회기점", "차칸스시", "언니네함바그", "버드나무순대국", "치맥파이브 회기점", "39돈가스", "간편식탁", "키친요로시쿠", "라구퀸", "명가식당", "도란도란곱창", "육회바른연어 외대점", "허브영양족발", "헤이마오차이 외대점", "본죽&비빔밥cafe 외대점", "고흥소곱창&부추생삼겹살", "차돌풍 외대점", "닭전문홍백집", "예향칼국수", "치보", "외대감자탕 외대점", "춘리마라탕 외대점", "미니멀샐러드", "주수사", "뜸들이다 회기점", "글라라스푼", "돈통무한리필 휘경점", "회기왕갈비탕", "우시라멘", "이상한떡볶이집", "밀모", "할미국밥", "사천면가", "구기우육도삭면", "돈수백 외대점", "해장국감자탕", "국빈", "홍콩반점0410 외대점", "이상준초밥", "아욱꽃", "오색식당", "산과들그리고달", "핵밥 한국외대점", "아지매식당", "숯불꼼닭발", "선이네수제순대국", "다해식당", "옹골진치킨 외대점", "써브웨이 외대점", "아리랑동가스", "마살라키친", "씨마트 외대본점", "오뚜기부대찌개", "코코니주방", "KFC 한국외대점", "이문시장", "마루기", "올떡 외대점", "일촌분식", "행복한한끼", "자연밥상", "두끼떡볶이 한국외대점", "촨커", "몬스터플레이스 이문점", "알촌 경희외대직영점", "영화장", "파치 외대점", "서울치즈피자 외대점", "할머니보쌈", "153구포국수", "브릴란테", "돈카츠앤우동돼랑이우랑이", "해신루", "진성각", "홍곱창", "이터스멕시칸", "무초타코", "라면팜", "깐띤", "광주회관", "금수저함바식당", "주연푸드", "호헌장담", "왕송", "고흥소곱창부추삼겹살", "20년전통외대닭갈비", "해성닭한마리", "멕시카나치킨 이문점", "가마로강정", "만이차이니즈퀴진", "베트남태양", "KAN한베식먹어보자", "피자헛 외대2호", "파파존스", "피자스쿨", "이삭토스트", "교수회관식당", "인문관식당"];
+      const randomIndex = Math.floor(Math.random() * menus.length);
+      const resultElement = document.getElementById("menu-result1");
+      resultElement.classList.remove("empty");
+      resultElement.textContent = menus[randomIndex];
+      resultElement.classList.add("show");
+    }
 
-
-
-    <script>
-        function pickRandomMenuGlobal() {
-            const menus = ["매취랑(한식)","피자보이(피자)","야미마라탕(마라탕)","하오츠양꼬치(중식)","엄마손칼국수(한식)","장호덕손만두(한식)","이태리 식당(양식)","호가그릴(고기)","정밀(한식)","로뎀식당(한식)","성수식당(한식)","리오브리또(멕시칸)","롯데리아(패스트푸드)","맘스터치(패스트푸드)","BHC(치킨)","외대갈매기(고기)","샤브향(아시안)","당신(양식)","육회바른연어(아시안)","마라장룡(마라탕)","큰맘할매순대국(한식)","춘천닭갈비(한식)","고기어때(고기)","동대문엽기떡볶이(분식)","고인돌횟집(회)","두찜(한식)","진성곱창(한식)","황소숯불생막창(한식)","대만족(한식)","명수당분식(분식)","뼈해장국순대국집(한식)","멕시카나치킨(치킨)","철뚝집(고기)","초원얼크니샤브샤브칼국수(한식)","피자스쿨(피자)","맛나바지락칼국수(면)","날으는김밥(분식)","상원(중식)","모현각(중식)","우리할매떡볶이(분식)","인생제육(한식)","BBQ(치킨)","신전떡볶이(분식)","교촌치킨(치킨)","진성부대찌개(한식)","전설의치킨(치킨)","백채김치찌개(한식)","윤아네집밥(한식)","고기앞으로백암이네(고기)","제일남원추어탕(한식)","미가초밥(일식)","홍's(돈가스)","기영이숯불두마리치킨(치킨)","맛나옹심이메밀칼국수(면)","미쳐버린파닭(치킨)","피나치공 용인모현외대점(피자)","맘스터치 (후생관 3층)(학교 안)","까르보네 (어문관1층)(학교 안)","학생식당 (후생관 1층)(학교 안)","바비든든 (후생관 1층)(학교 안)","쿠킹마마 (후생관 2층)(학교 안)","교직원식당 (후생관 2층)(학교 안)","기숙사식당 (기숙사)(학교 안)","아리랑덮밥 (어문관 1층)(학교 안)","헬로밀 (어문관 1층)(학교 안)","낙지도가(한식)","쏘자토스트(샐러드/샌드위치/토스트)","이백장돈가스(돈가스)","역전우동0410 용인외대점(면)","왕산돈까스(돈가스)","용인면옥(면)","한솔상회(한식)","마미쿡(햄버거)","치킨마루(치킨)","보나리체타(피자)"];
-            const randomIndex = Math.floor(Math.random() * menus.length);
-            document.getElementById("menu-result2").textContent =  menus[randomIndex];
-        }
-    </script>
-
- 
+    function pickRandomMenuGlobal() {
+      const menus = ["매취랑(한식)", "피자보이(피자)", "야미마라탕(마라탕)", "하오츠양꼬치(중식)", "엄마손칼국수(한식)", "장호덕손만두(한식)", "이태리 식당(양식)", "호가그릴(고기)", "정밀(한식)", "로뎀식당(한식)", "성수식당(한식)", "리오브리또(멕시칸)", "롯데리아(패스트푸드)", "맘스터치(패스트푸드)", "BHC(치킨)", "외대갈매기(고기)", "샤브향(아시안)", "당신(양식)", "육회바른연어(아시안)", "마라장룡(마라탕)", "큰맘할매순대국(한식)", "춘천닭갈비(한식)", "고기어때(고기)", "동대문엽기떡볶이(분식)", "고인돌횟집(회)", "두찜(한식)", "진성곱창(한식)", "황소숯불생막창(한식)", "대만족(한식)", "명수당분식(분식)", "뼈해장국순대국집(한식)", "멕시카나치킨(치킨)", "철뚝집(고기)", "초원얼크니샤브샤브칼국수(한식)", "피자스쿨(피자)", "맛나바지락칼국수(면)", "날으는김밥(분식)", "상원(중식)", "모현각(중식)", "우리할매떡볶이(분식)", "인생제육(한식)", "BBQ(치킨)", "신전떡볶이(분식)", "교촌치킨(치킨)", "진성부대찌개(한식)", "전설의치킨(치킨)", "백채김치찌개(한식)", "윤아네집밥(한식)", "고기앞으로백암이네(고기)", "제일남원추어탕(한식)", "미가초밥(일식)", "홍's(돈가스)", "기영이숯불두마리치킨(치킨)", "맛나옹심이메밀칼국수(면)", "미쳐버린파닭(치킨)", "피나치공 용인모현외대점(피자)", "맘스터치 (후생관 3층)(학교 안)", "까르보네 (어문관1층)(학교 안)", "학생식당 (후생관 1층)(학교 안)", "바비든든 (후생관 1층)(학교 안)", "쿠킹마마 (후생관 2층)(학교 안)", "교직원식당 (후생관 2층)(학교 안)", "기숙사식당 (기숙사)(학교 안)", "아리랑덮밥 (어문관 1층)(학교 안)", "헬로밀 (어문관 1층)(학교 안)", "낙지도가(한식)", "쏘자토스트(샐러드/샌드위치/토스트)", "이백장돈가스(돈가스)", "역전우동0410 용인외대점(면)", "왕산돈까스(돈가스)", "용인면옥(면)", "한솔상회(한식)", "마미쿡(햄버거)", "치킨마루(치킨)", "보나리체타(피자)"];
+      const randomIndex = Math.floor(Math.random() * menus.length);
+      const resultElement = document.getElementById("menu-result2");
+      resultElement.classList.remove("empty");
+      resultElement.textContent = menus[randomIndex];
+      resultElement.classList.add("show");
+    }
+  </script>
 </body>
+
 </html>

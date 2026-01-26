@@ -1,0 +1,604 @@
+/* HUFS 공식 색상 팔레트 */
+:root {
+    --hufs-green: #006B3C;        /* HUFS GREEN (Pantone 7463C) */
+    --hufs-navy: #003366;         /* NAVY (남색) */
+    --hufs-gold: #D4AF37;         /* HUFS GOLD (금색) */
+    --hufs-silver: #C0C0C0;       /* HUFS SILVER (은색) */
+    --hufs-white: #FFFFFF;         /* 흰색 */
+    --hufs-green-light: #008B4F;  /* 밝은 녹색 (hover용) */
+    --hufs-green-dark: #00502A;   /* 어두운 녹색 */
+    --hufs-navy-light: #004080;   /* 밝은 남색 */
+    --hufs-gold-light: #E5C04A;  /* 밝은 금색 */
+    --bg-gradient: linear-gradient(135deg, #003366 0%, #006B3C 100%);
+}
+
+/* 기본 리셋 및 폰트 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--hufs-white);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* 공통 헤더 */
+.header {
+    background: rgba(0, 51, 102, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--hufs-white);
+}
+
+.header-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.header-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--hufs-white);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: var(--hufs-white);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--hufs-gold);
+}
+
+/* 공통 푸터 */
+.footer {
+    background: var(--hufs-navy);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 2px solid var(--hufs-gold);
+}
+
+.footer-text {
+    color: var(--hufs-silver);
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+.footer-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--hufs-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--hufs-gold-light);
+}
+
+/* 메인 컨테이너 */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 200px);
+}
+
+/* 버튼 스타일 */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: var(--hufs-green);
+    color: var(--hufs-white);
+    border: 2px solid var(--hufs-green);
+}
+
+.btn-primary:hover {
+    background: var(--hufs-green-light);
+    border-color: var(--hufs-green-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 107, 60, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--hufs-white);
+    border: 2px solid var(--hufs-white);
+}
+
+.btn-secondary:hover {
+    background: var(--hufs-white);
+    color: var(--hufs-navy);
+    transform: translateY(-2px);
+}
+
+.btn-gold {
+    background: var(--hufs-gold);
+    color: var(--hufs-navy);
+    border: 2px solid var(--hufs-gold);
+}
+
+.btn-gold:hover {
+    background: var(--hufs-gold-light);
+    border-color: var(--hufs-gold-light);
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+/* 카드 스타일 */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 제목 스타일 */
+h1 {
+    color: var(--hufs-gold);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: var(--hufs-white);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    color: var(--hufs-gold);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+/* 버튼 컨테이너 */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+    
+    .main-container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .main-container {
+        padding: 0.5rem;
+    }
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* 로딩 스피너 */
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid var(--hufs-gold);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 모달 팝업 */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--hufs-navy);
+    border: 2px solid var(--hufs-gold);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease;
+    position: relative;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--hufs-gold);
+}
+
+.modal-title {
+    color: var(--hufs-gold);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: var(--hufs-white);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--hufs-gold);
+}
+
+.modal-body {
+    color: var(--hufs-white);
+}
+
+.restaurant-info {
+    margin-bottom: 1.5rem;
+}
+
+.restaurant-info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+}
+
+.restaurant-info-label {
+    color: var(--hufs-gold);
+    font-weight: 600;
+    min-width: 80px;
+}
+
+.restaurant-info-value {
+    color: var(--hufs-white);
+    flex: 1;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.modal-actions .btn {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* 검색 기능 */
+.search-container {
+    margin: 2rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--hufs-gold);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--hufs-white);
+    backdrop-filter: blur(10px);
+}
+
+.search-input::placeholder {
+    color: var(--hufs-silver);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--hufs-gold-light);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--hufs-gold);
+    font-size: 1.2rem;
+}
+
+.search-results {
+    margin-top: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-results.show {
+    display: block;
+}
+
+.search-result-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-result-item:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: var(--hufs-gold);
+    transform: translateX(5px);
+}
+
+.search-result-name {
+    color: var(--hufs-gold);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.search-result-category {
+    color: var(--hufs-silver);
+    font-size: 0.9rem;
+}
+
+.no-results {
+    text-align: center;
+    color: var(--hufs-silver);
+    padding: 2rem;
+    display: none;
+}
+
+.no-results.show {
+    display: block;
+}
+
+/* 클릭 가능한 맛집 이름 */
+.restaurant-name-link {
+    color: var(--hufs-gold);
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.restaurant-name-link:hover {
+    text-decoration-color: var(--hufs-gold);
+    color: var(--hufs-gold-light);
+}
+
+/* 성능 최적화 */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* 이미지 최적화 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo, .hero-logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* 폰트 최적화 */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-display: swap;
+}
+
+/* 스크롤 최적화 */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 애니메이션 성능 최적화 */
+.modal-content,
+.card,
+.btn {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* 유틸리티 클래스 */
+.text-center {
+    text-align: center;
+}
+
+.text-gold {
+    color: var(--hufs-gold);
+}
+
+.text-silver {
+    color: var(--hufs-silver);
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+

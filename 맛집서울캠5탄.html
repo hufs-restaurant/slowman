@@ -1,18 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>외대 서울 맛집</title>
-
+    <title>서울캠퍼스 맛집 지도 | 한국외대 맛집 지도</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/common.css">
+    <script src="js/restaurant-utils.js" defer></script>
+    <style>
+        .map-container {
+            padding: 2rem 1rem;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .map-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .map-header h1 {
+            color: var(--hufs-gold);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .map-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .tableau-wrapper {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
-    <button onclick="location.href='https://hufs-restaurant.github.io/slowman/%EB%A7%9B%EC%A7%91%EC%84%9C%EC%9A%B8%EC%BA%A05%ED%83%84_%EC%A7%80%EB%8F%84%ED%99%95%EB%8C%80.html'" 
-            style="position: absolute; top: 10px; right: 10px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px;">
-        지도 확대
-    </button>
+    <!-- 헤더 -->
+    <header class="header">
+        <a href="맛집외대통합3탄.html" class="header-logo">
+            <img src="외대로고3.png" alt="한국외대 로고" loading="lazy">
+            <span class="header-title">서울캠퍼스 맛집 지도</span>
+        </a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="맛집외대통합3탄.html">홈</a></li>
+                <li><a href="맛집서울캠5탄_지도확대.html">확대 보기</a></li>
+                <li><a href="랜덤메뉴.html">랜덤 메뉴</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class='tableauPlaceholder' id='viz1740793014248' style='position: relative'><noscript><a href='#'><img alt='0301설4 ' src='https://public.tableau.com/static/images/YZ/YZRRGJ96H/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared/YZRRGJ96H' /> <param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/YZ/YZRRGJ96H/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='ko-KR' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1740793014248');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='650px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='650px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='777px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    <!-- 지도 컨테이너 -->
+    <main class="map-container">
+        <div class="map-header">
+            <h1>서울캠퍼스 맛집 지도</h1>
+        </div>
+        
+        <div class="map-controls">
+            <a href="맛집서울캠5탄_지도확대.html" class="btn btn-primary btn-small">🔍 지도 확대</a>
+            <a href="맛집외대통합3탄.html" class="btn btn-gold btn-small">🏠 홈으로</a>
+        </div>
+        
+        <div class="tableau-wrapper">
+            <div class='tableauPlaceholder' id='viz1740793014248' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='서울캠퍼스 맛집 지도' src='https://public.tableau.com/static/images/YZ/YZRRGJ96H/1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='path' value='shared/YZRRGJ96H' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/YZ/YZRRGJ96H/1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='ko-KR' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1740793014248');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if (divElement.offsetWidth > 800) {
+                    vizElement.style.minWidth = '420px';
+                    vizElement.style.maxWidth = '650px';
+                    vizElement.style.width = '100%';
+                    vizElement.style.minHeight = '587px';
+                    vizElement.style.maxHeight = '887px';
+                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                } else if (divElement.offsetWidth > 500) {
+                    vizElement.style.minWidth = '420px';
+                    vizElement.style.maxWidth = '650px';
+                    vizElement.style.width = '100%';
+                    vizElement.style.minHeight = '587px';
+                    vizElement.style.maxHeight = '887px';
+                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                } else {
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = '777px';
+                }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </div>
+    </main>
 
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>한국외국어대학교 서울캠퍼스 맛집 가이드</p>
+        </div>
+        <div class="footer-links">
+            <a href="맛집외대통합3탄.html">홈으로</a>
+            <a href="랜덤메뉴.html">랜덤 메뉴</a>
+        </div>
+    </footer>
 </body>
 </html>

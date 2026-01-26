@@ -89,3 +89,5 @@ if __name__ == "__main__":
     clean_and_validate_data("restaurants_seoul.json", "restaurants_seoul_cleaned.json")
     clean_and_validate_data("restaurants_global.json", "restaurants_global_cleaned.json")
 
+
+

@@ -146,3 +146,5 @@ python -m pip install package_name
 - [Playwright 문서](https://playwright.dev/python/)
 - [OpenAI API 문서](https://platform.openai.com/docs)
 
+
+
