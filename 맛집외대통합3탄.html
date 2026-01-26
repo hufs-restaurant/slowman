@@ -1,101 +1,177 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG9WEH0PN6"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-VG9WEH0PN6');
-        </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG9WEH0PN6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VG9WEH0PN6');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국외대 캠퍼스 통합 맛집 지도</title>
+    <title>한국외대 맛집 지도 | HUFS Restaurant Guide Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/common.css">
+    <script src="js/restaurant-utils.js" defer></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .hero-section {
             text-align: center;
-            margin: 50px;
-            background-color: #142B40; /* 배경을 #142B40으로 변경 */
-            color: #FFF; /* 기본 글자색은 흰색 */
+            padding: 3rem 1rem;
+            animation: fadeIn 0.8s ease-out;
         }
-        h1 {
-            margin-bottom: 5px;
-            color: #A67B56; /* 제목 색상 변경 */
-            font-size: 2em; /* 제목 크기 */
+        
+        .hero-logo {
+            margin: 2rem auto;
+            max-width: 200px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
-        .subtitle-main {
-            color: #A67B56;
-            font-size: 1em; /* 제목보다 작게 */
-            margin-bottom: 5px;
+        
+        .hero-subtitle {
+            color: var(--hufs-silver);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
         }
-        .subtitle2 {
-            color:  #A67B56; 
-            font-size: 0.5em; /* 글자 크기를 절반으로 줄임 */
+        
+        .campus-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 600px;
+            margin: 2rem auto;
         }
-        .button-container {
+        
+        .campus-button {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--hufs-gold);
+            border-radius: 12px;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--hufs-white);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .campus-button:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--hufs-gold-light);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        .campus-button h2 {
+            color: var(--hufs-gold);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .campus-button p {
+            color: var(--hufs-silver);
+            font-size: 0.9rem;
+        }
+        
+        .feature-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
         }
-        /* 기존 버튼 크기 유지하며 배경색과 글자색 반전 */
-        .button {
-            padding: 15px 30px;
-            font-size: 18px;
-            color: #A67B56; /* 기존 배경색을 글자색으로 */
-            background-color: white; /* 기존 글자색을 배경색으로 */
-            border: 2px solid #A67B56;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
+        
+        .disclaimer {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--hufs-green);
+            padding: 1.5rem;
+            margin: 3rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--hufs-silver);
         }
-        .button:hover {
-            background-color: #F5F5F5; /* hover 시 더 밝은 색 */
-        }
-        /* 개발자 정보 버튼은 절반 크기로 줄이면서 색 반전 */
-        .small-button {
-            padding: 7px 15px; /* 기존 크기의 절반으로 */
-            font-size: 14px;
-            color: white; /* 글자색을 흰색으로 */
-            background-color: #A67B56; /* 배경을 원래 색으로 */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .small-button:hover {
-            background-color: #8B5E3C;
-        }
-        .logo {
-            margin-bottom: 30px;
+        
+        .disclaimer strong {
+            color: var(--hufs-gold);
         }
     </style>
 </head>
 <body>
-    <h1>한국외대 맛집 지도</h1>
-    <hr>
-    <p class="subtitle-main">HUFS Restaurant Guide Map</p>
-    
-    <br>
-    <!-- 로고 이미지 추가 -->
-    <img src="외대로고3.png" alt="한국외대 로고" class="logo" width="150">
+    <!-- 헤더 -->
+    <header class="header">
+        <a href="맛집외대통합3탄.html" class="header-logo">
+            <img src="외대로고3.png" alt="한국외대 로고" loading="lazy">
+            <span class="header-title">한국외대 맛집 지도</span>
+        </a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="맛집외대통합3탄.html">홈</a></li>
+                <li><a href="랜덤메뉴.html">랜덤 메뉴</a></li>
+                <li><a href="개발자정보.html">개발자</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="button-container">
-        <a href="https://hufs-restaurant.github.io/slowman/%EB%A7%9B%EC%A7%91%EC%84%9C%EC%9A%B8%EC%BA%A05%ED%83%84_%EC%A7%80%EB%8F%84%ED%99%95%EB%8C%80.html" class="button">Seoul<br>Campus</a>
-        <a href="https://hufs-restaurant.github.io/slowman/%EB%A7%9B%EC%A7%91%EA%B8%80%EB%A1%9C%EB%B2%8C%EC%BA%A06%ED%83%84.html" class="button">Global<br>Campus</a>
-    </div>
-    
-    <p class="subtitle2">본 사이트는 상업적 목적이 아님을 밝힙니다. <br>본 사이트는 개발자 본인의 개인적인 사이트임을 밝힙니다.<br> 개발자 본인이 매번 맛집 검색하기가 귀찮아서 만들었습니다.<br>맛집 선정에는 외대생들의 개인 취향이 반영되었습니다.</p>
+    <!-- 메인 컨텐츠 -->
+    <main class="main-container">
+        <section class="hero-section">
+            <h1>한국외대 맛집 지도</h1>
+            <p class="hero-subtitle">HUFS Restaurant Guide Map</p>
+            
+            <img src="외대로고3.png" alt="한국외대 로고" class="hero-logo" loading="lazy">
+            
+            <div class="campus-buttons">
+                <a href="맛집서울캠5탄_지도확대.html" class="campus-button">
+                    <h2>Seoul Campus</h2>
+                    <p>서울캠퍼스 맛집 지도</p>
+                </a>
+                <a href="맛집글로벌캠6탄.html" class="campus-button">
+                    <h2>Global Campus</h2>
+                    <p>글로벌캠퍼스 맛집 지도</p>
+                </a>
+            </div>
+            
+            <!-- 검색 기능 -->
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" 
+                           id="restaurant-search" 
+                           class="search-input" 
+                           placeholder="맛집 이름 또는 카테고리로 검색...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div id="search-results" class="search-results"></div>
+                <div id="no-results" class="no-results">검색 결과가 없습니다.</div>
+            </div>
+            
+            <div class="feature-buttons">
+                <a href="랜덤메뉴.html" class="btn btn-gold btn-small">🍽️ 오늘 뭐 먹지?</a>
+                <a href="개발자정보.html" class="btn btn-secondary btn-small">👨‍💻 개발자 정보</a>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>면책 조항</strong><br>
+                본 사이트는 상업적 목적이 아님을 밝힙니다. 본 사이트는 개발자 본인의 개인적인 사이트임을 밝힙니다. 
+                개발자 본인이 매번 맛집 검색하기가 귀찮아서 만들었습니다. 맛집 선정에는 외대생들의 개인 취향이 반영되었습니다.
+            </div>
+        </section>
+    </main>
 
-    <!-- 랜덤메뉴 정보 버튼 추가 -->
-    <div class="button-container">
-        <a href="https://hufs-restaurant.github.io/slowman/%EB%9E%9C%EB%8D%A4%EB%A9%94%EB%89%B4.html" class="small-button">오늘 뭐 먹지?<br>Random Menu</a>
-    <!-- 개발자 정보 버튼 추가 -->
-        <a href="https://hufs-restaurant.github.io/slowman/%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%A0%95%EB%B3%B4.html" class="small-button">개발자 정보<br>Developer</a>
-    </div>
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>한국외국어대학교 맛집 가이드</p>
+            <p>HUFS Restaurant Guide Map</p>
+        </div>
+        <div class="footer-links">
+            <a href="개발자정보.html">개발자 정보</a>
+            <a href="랜덤메뉴.html">랜덤 메뉴</a>
+        </div>
+    </footer>
 </body>
 </html>
 
