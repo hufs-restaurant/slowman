@@ -1,0 +1,1224 @@
+{
+  "seoul": {
+    "campus": "서울캠퍼스",
+    "restaurants": [
+      {
+        "name": "꾸니꾸니",
+        "category": "일식"
+      },
+      {
+        "name": "코로코로",
+        "category": "일식"
+      },
+      {
+        "name": "이문동신냉면",
+        "category": "한식"
+      },
+      {
+        "name": "옛날할머니보쌈",
+        "category": "한식"
+      },
+      {
+        "name": "돼지왕",
+        "category": "고기"
+      },
+      {
+        "name": "스시고이",
+        "category": "일식"
+      },
+      {
+        "name": "라무진 회기점",
+        "category": "일식"
+      },
+      {
+        "name": "회기돈",
+        "category": "고기"
+      },
+      {
+        "name": "락식락당 경희대점",
+        "category": "한식"
+      },
+      {
+        "name": "사나이뚝배기 경희대점",
+        "category": "한식"
+      },
+      {
+        "name": "봉추찜닭 경희대점",
+        "category": "치킨"
+      },
+      {
+        "name": "우차이",
+        "category": "중식"
+      },
+      {
+        "name": "마구로준",
+        "category": "일식"
+      },
+      {
+        "name": "스타동 경희대점",
+        "category": "일식"
+      },
+      {
+        "name": "현방촌",
+        "category": "중식"
+      },
+      {
+        "name": "홍콩대패당",
+        "category": "중식"
+      },
+      {
+        "name": "시키카츠",
+        "category": "일식"
+      },
+      {
+        "name": "회태랑사골마라탕",
+        "category": "중식"
+      },
+      {
+        "name": "호랑이도삭면",
+        "category": "중식"
+      },
+      {
+        "name": "회기왕족발보쌈",
+        "category": "한식"
+      },
+      {
+        "name": "솔낭구",
+        "category": "일식"
+      },
+      {
+        "name": "참이맛감자탕 경희대점",
+        "category": "한식"
+      },
+      {
+        "name": "히노하루",
+        "category": "일식"
+      },
+      {
+        "name": "샤브로21 경희대",
+        "category": "일식"
+      },
+      {
+        "name": "모코모코",
+        "category": "일식"
+      },
+      {
+        "name": "심양 경희대점",
+        "category": "중식"
+      },
+      {
+        "name": "고기하다",
+        "category": "고기"
+      },
+      {
+        "name": "명랑부대찌개 외대점",
+        "category": "한식"
+      },
+      {
+        "name": "스시캘리포니아",
+        "category": "일식"
+      },
+      {
+        "name": "337냉삼겹",
+        "category": "고기"
+      },
+      {
+        "name": "에잇올리",
+        "category": "양식"
+      },
+      {
+        "name": "푸른하늘",
+        "category": "한식"
+      },
+      {
+        "name": "이도감식당",
+        "category": "한식"
+      },
+      {
+        "name": "오븐마루치킨 외대점",
+        "category": "치킨"
+      },
+      {
+        "name": "싸움의고수 외대점",
+        "category": "치킨"
+      },
+      {
+        "name": "도읍지",
+        "category": "한식"
+      },
+      {
+        "name": "매스플레이트 회기점",
+        "category": "양식"
+      },
+      {
+        "name": "신의주순대와쭈꾸미 외대역점",
+        "category": "한식"
+      },
+      {
+        "name": "타코비&치즈볼 한국외대점",
+        "category": "멕시칸"
+      },
+      {
+        "name": "한솥도시락 외대정문점",
+        "category": "한식"
+      },
+      {
+        "name": "빽보이피자 외대앞점",
+        "category": "피자"
+      },
+      {
+        "name": "한솥도시락 외대점",
+        "category": "한식"
+      },
+      {
+        "name": "59년옛날통닭",
+        "category": "치킨"
+      },
+      {
+        "name": "밀플랜비",
+        "category": "양식"
+      },
+      {
+        "name": "만이",
+        "category": "중식"
+      },
+      {
+        "name": "삼칠공",
+        "category": "한식"
+      },
+      {
+        "name": "카빙당",
+        "category": "디저트"
+      },
+      {
+        "name": "성화금탕마라탕&튀김꼬치",
+        "category": "중식"
+      },
+      {
+        "name": "도미노피자 이문점",
+        "category": "피자"
+      },
+      {
+        "name": "수유리우동집 외대점",
+        "category": "일식"
+      },
+      {
+        "name": "서가네 정육식당 본점",
+        "category": "고기"
+      },
+      {
+        "name": "고씨네 한국외대점",
+        "category": "한식"
+      },
+      {
+        "name": "투고샐러드 한국외국어대점",
+        "category": "샐러드"
+      },
+      {
+        "name": "운남쌀국수",
+        "category": "베트남"
+      },
+      {
+        "name": "치킨에꼬치다 외대역점",
+        "category": "치킨"
+      },
+      {
+        "name": "샤로스톤 외대점",
+        "category": "고기"
+      },
+      {
+        "name": "이문족발",
+        "category": "한식"
+      },
+      {
+        "name": "컵짱이야 외대본점",
+        "category": "분식"
+      },
+      {
+        "name": "통일부대찌개",
+        "category": "한식"
+      },
+      {
+        "name": "일층집",
+        "category": "한식"
+      },
+      {
+        "name": "띵하우",
+        "category": "중식"
+      },
+      {
+        "name": "이소",
+        "category": "일식"
+      },
+      {
+        "name": "시골집",
+        "category": "한식"
+      },
+      {
+        "name": "장수식당",
+        "category": "한식"
+      },
+      {
+        "name": "대한왕뼈구이감자탕",
+        "category": "한식"
+      },
+      {
+        "name": "닭치고한잔 본점",
+        "category": "치킨"
+      },
+      {
+        "name": "마포생주먹고기",
+        "category": "고기"
+      },
+      {
+        "name": "정성서울국수집 외대본점",
+        "category": "한식"
+      },
+      {
+        "name": "골드케밥 이문점",
+        "category": "터키"
+      },
+      {
+        "name": "미스사이공 외대점",
+        "category": "태국"
+      },
+      {
+        "name": "토담마을",
+        "category": "한식"
+      },
+      {
+        "name": "와까리꽁",
+        "category": "일식"
+      },
+      {
+        "name": "탕화쿵푸마라탕 외대점",
+        "category": "중식"
+      },
+      {
+        "name": "청년김치찌개",
+        "category": "한식"
+      },
+      {
+        "name": "샐러드 앤 포케",
+        "category": "샐러드"
+      },
+      {
+        "name": "번패티번 외대점",
+        "category": "햄버거"
+      },
+      {
+        "name": "롯데리아 외대역점",
+        "category": "패스트푸드"
+      },
+      {
+        "name": "이문동그집 회기역직영점",
+        "category": "한식"
+      },
+      {
+        "name": "인생설렁탕 경희대점",
+        "category": "한식"
+      },
+      {
+        "name": "해나루초밥",
+        "category": "일식"
+      },
+      {
+        "name": "참다랑어",
+        "category": "일식"
+      },
+      {
+        "name": "삼복한방닭한마리",
+        "category": "치킨"
+      },
+      {
+        "name": "오관스시",
+        "category": "일식"
+      },
+      {
+        "name": "뜰아래",
+        "category": "한식"
+      },
+      {
+        "name": "굿갓레스토랑 회기점",
+        "category": "양식"
+      },
+      {
+        "name": "코타",
+        "category": "일식"
+      },
+      {
+        "name": "지지고 외대후문점",
+        "category": "일식"
+      },
+      {
+        "name": "카페115",
+        "category": "카페"
+      },
+      {
+        "name": "회기버거 본점",
+        "category": "햄버거"
+      },
+      {
+        "name": "프랭크버거 외대역점",
+        "category": "햄버거"
+      },
+      {
+        "name": "맘스터치 서울외대점",
+        "category": "패스트푸드"
+      },
+      {
+        "name": "버거운버거 서울경희대점",
+        "category": "햄버거"
+      },
+      {
+        "name": "맥도날드 외대점",
+        "category": "패스트푸드"
+      },
+      {
+        "name": "일품춘천닭갈비",
+        "category": "한식"
+      },
+      {
+        "name": "본가할머니보쌈",
+        "category": "한식"
+      },
+      {
+        "name": "진미생고기전문점",
+        "category": "고기"
+      },
+      {
+        "name": "맛닭꼬 경희대점",
+        "category": "치킨"
+      },
+      {
+        "name": "경성고기꾼",
+        "category": "고기"
+      },
+      {
+        "name": "고황24시뼈다귀해장국감자탕",
+        "category": "한식"
+      },
+      {
+        "name": "모두랑즉석떡볶이",
+        "category": "분식"
+      },
+      {
+        "name": "여기가좋겠네",
+        "category": "한식"
+      },
+      {
+        "name": "꽃돼지무한삼겹 경희대점",
+        "category": "고기"
+      },
+      {
+        "name": "홍익짬뽕 경희대직영점",
+        "category": "중식"
+      },
+      {
+        "name": "153스트리트",
+        "category": "양식"
+      },
+      {
+        "name": "오늘통닭 외대점",
+        "category": "치킨"
+      },
+      {
+        "name": "후루사토",
+        "category": "일식"
+      },
+      {
+        "name": "휘경짬뽕",
+        "category": "중식"
+      },
+      {
+        "name": "송원",
+        "category": "한식"
+      },
+      {
+        "name": "어흥식당 경희대점",
+        "category": "한식"
+      },
+      {
+        "name": "멍군집",
+        "category": "한식"
+      },
+      {
+        "name": "이령김밥",
+        "category": "분식"
+      },
+      {
+        "name": "이문동그집 본점",
+        "category": "한식"
+      },
+      {
+        "name": "레알라면",
+        "category": "일식"
+      },
+      {
+        "name": "온센 동대문구점",
+        "category": "일식"
+      },
+      {
+        "name": "영카츠 외대점",
+        "category": "일식"
+      },
+      {
+        "name": "꼬기92",
+        "category": "고기"
+      },
+      {
+        "name": "화덕고 외대앞본점",
+        "category": "고기"
+      },
+      {
+        "name": "김곳간",
+        "category": "한식"
+      },
+      {
+        "name": "등촌샤브칼국수 경희대점",
+        "category": "한식"
+      },
+      {
+        "name": "고기야미안해",
+        "category": "고기"
+      },
+      {
+        "name": "벗이있는집",
+        "category": "한식"
+      },
+      {
+        "name": "비스트로99",
+        "category": "양식"
+      },
+      {
+        "name": "카시와",
+        "category": "일식"
+      },
+      {
+        "name": "BS라멘&돈부리",
+        "category": "일식"
+      },
+      {
+        "name": "외대매운돈코츠라멘",
+        "category": "일식"
+      },
+      {
+        "name": "꿀꿀이닭갈비",
+        "category": "한식"
+      },
+      {
+        "name": "Bun99",
+        "category": "햄버거"
+      },
+      {
+        "name": "탐스타코",
+        "category": "멕시칸"
+      },
+      {
+        "name": "매콤화담쭈꾸미",
+        "category": "한식"
+      },
+      {
+        "name": "미가돈까스",
+        "category": "일식"
+      },
+      {
+        "name": "버텍스미국식덮밥 회기점",
+        "category": "양식"
+      },
+      {
+        "name": "차칸스시",
+        "category": "일식"
+      },
+      {
+        "name": "언니네함바그",
+        "category": "양식"
+      },
+      {
+        "name": "버드나무순대국",
+        "category": "한식"
+      },
+      {
+        "name": "치맥파이브 회기점",
+        "category": "치킨"
+      },
+      {
+        "name": "39돈가스",
+        "category": "일식"
+      },
+      {
+        "name": "간편식탁",
+        "category": "한식"
+      },
+      {
+        "name": "키친요로시쿠",
+        "category": "일식"
+      },
+      {
+        "name": "라구퀸",
+        "category": "양식"
+      },
+      {
+        "name": "명가식당",
+        "category": "한식"
+      },
+      {
+        "name": "도란도란곱창",
+        "category": "한식"
+      },
+      {
+        "name": "육회바른연어 외대점",
+        "category": "일식"
+      },
+      {
+        "name": "허브영양족발",
+        "category": "한식"
+      },
+      {
+        "name": "헤이마오차이 외대점",
+        "category": "중식"
+      },
+      {
+        "name": "본죽&비빔밥cafe 외대점",
+        "category": "한식"
+      },
+      {
+        "name": "고흥소곱창&부추생삼겹살",
+        "category": "한식"
+      },
+      {
+        "name": "차돌풍 외대점",
+        "category": "한식"
+      },
+      {
+        "name": "닭전문홍백집",
+        "category": "치킨"
+      },
+      {
+        "name": "예향칼국수",
+        "category": "한식"
+      },
+      {
+        "name": "치보",
+        "category": "일식"
+      },
+      {
+        "name": "외대감자탕 외대점",
+        "category": "한식"
+      },
+      {
+        "name": "춘리마라탕 외대점",
+        "category": "중식"
+      },
+      {
+        "name": "미니멀샐러드",
+        "category": "샐러드"
+      },
+      {
+        "name": "주수사",
+        "category": "일식"
+      },
+      {
+        "name": "뜸들이다 회기점",
+        "category": "한식"
+      },
+      {
+        "name": "글라라스푼",
+        "category": "양식"
+      },
+      {
+        "name": "돈통무한리필 휘경점",
+        "category": "고기"
+      },
+      {
+        "name": "회기왕갈비탕",
+        "category": "한식"
+      },
+      {
+        "name": "우시라멘",
+        "category": "일식"
+      },
+      {
+        "name": "이상한떡볶이집",
+        "category": "분식"
+      },
+      {
+        "name": "밀모",
+        "category": "양식"
+      },
+      {
+        "name": "할미국밥",
+        "category": "한식"
+      },
+      {
+        "name": "사천면가",
+        "category": "중식"
+      },
+      {
+        "name": "구기우육도삭면",
+        "category": "중식"
+      },
+      {
+        "name": "돈수백 외대점",
+        "category": "고기"
+      },
+      {
+        "name": "해장국감자탕",
+        "category": "한식"
+      },
+      {
+        "name": "국빈",
+        "category": "한식"
+      },
+      {
+        "name": "홍콩반점0410 외대점",
+        "category": "중식"
+      },
+      {
+        "name": "이상준초밥",
+        "category": "일식"
+      },
+      {
+        "name": "아욱꽃",
+        "category": "한식"
+      },
+      {
+        "name": "오색식당",
+        "category": "한식"
+      },
+      {
+        "name": "산과들그리고달",
+        "category": "카페"
+      },
+      {
+        "name": "핵밥 한국외대점",
+        "category": "한식"
+      },
+      {
+        "name": "아지매식당",
+        "category": "한식"
+      },
+      {
+        "name": "숯불꼼닭발",
+        "category": "한식"
+      },
+      {
+        "name": "선이네수제순대국",
+        "category": "한식"
+      },
+      {
+        "name": "다해식당",
+        "category": "한식"
+      },
+      {
+        "name": "옹골진치킨 외대점",
+        "category": "치킨"
+      },
+      {
+        "name": "써브웨이 외대점",
+        "category": "샌드위치"
+      },
+      {
+        "name": "아리랑동가스",
+        "category": "일식"
+      },
+      {
+        "name": "마살라키친",
+        "category": "인도"
+      },
+      {
+        "name": "씨마트 외대본점",
+        "category": "마트"
+      },
+      {
+        "name": "오뚜기부대찌개",
+        "category": "한식"
+      },
+      {
+        "name": "코코니주방",
+        "category": "일식"
+      },
+      {
+        "name": "KFC 한국외대점",
+        "category": "패스트푸드"
+      },
+      {
+        "name": "이문시장",
+        "category": "시장"
+      },
+      {
+        "name": "마루기",
+        "category": "한식"
+      },
+      {
+        "name": "올떡 외대점",
+        "category": "디저트"
+      },
+      {
+        "name": "일촌분식",
+        "category": "분식"
+      },
+      {
+        "name": "행복한한끼",
+        "category": "한식"
+      },
+      {
+        "name": "자연밥상",
+        "category": "한식"
+      },
+      {
+        "name": "두끼떡볶이 한국외대점",
+        "category": "분식"
+      },
+      {
+        "name": "촨커",
+        "category": "중식"
+      },
+      {
+        "name": "몬스터플레이스 이문점",
+        "category": "양식"
+      },
+      {
+        "name": "알촌 경희외대직영점",
+        "category": "일식"
+      },
+      {
+        "name": "영화장",
+        "category": "한식"
+      },
+      {
+        "name": "파치 외대점",
+        "category": "양식"
+      },
+      {
+        "name": "서울치즈피자 외대점",
+        "category": "피자"
+      },
+      {
+        "name": "할머니보쌈",
+        "category": "한식"
+      },
+      {
+        "name": "153구포국수",
+        "category": "한식"
+      },
+      {
+        "name": "브릴란테",
+        "category": "양식"
+      },
+      {
+        "name": "돈카츠앤우동돼랑이우랑이",
+        "category": "일식"
+      },
+      {
+        "name": "해신루",
+        "category": "중식"
+      },
+      {
+        "name": "진성각",
+        "category": "중식"
+      },
+      {
+        "name": "홍곱창",
+        "category": "한식"
+      },
+      {
+        "name": "이터스멕시칸",
+        "category": "멕시칸"
+      },
+      {
+        "name": "무초타코",
+        "category": "멕시칸"
+      },
+      {
+        "name": "라면팜",
+        "category": "일식"
+      },
+      {
+        "name": "깐띤",
+        "category": "중식"
+      },
+      {
+        "name": "광주회관",
+        "category": "한식"
+      },
+      {
+        "name": "금수저함바식당",
+        "category": "양식"
+      },
+      {
+        "name": "주연푸드",
+        "category": "한식"
+      },
+      {
+        "name": "호헌장담",
+        "category": "한식"
+      },
+      {
+        "name": "왕송",
+        "category": "한식"
+      },
+      {
+        "name": "고흥소곱창부추삼겹살",
+        "category": "한식"
+      },
+      {
+        "name": "20년전통외대닭갈비",
+        "category": "한식"
+      },
+      {
+        "name": "해성닭한마리",
+        "category": "치킨"
+      },
+      {
+        "name": "멕시카나치킨 이문점",
+        "category": "치킨"
+      },
+      {
+        "name": "가마로강정",
+        "category": "치킨"
+      },
+      {
+        "name": "만이차이니즈퀴진",
+        "category": "중식"
+      },
+      {
+        "name": "베트남태양",
+        "category": "베트남"
+      },
+      {
+        "name": "KAN한베식먹어보자",
+        "category": "베트남"
+      },
+      {
+        "name": "피자헛 외대2호",
+        "category": "피자"
+      },
+      {
+        "name": "파파존스",
+        "category": "피자"
+      },
+      {
+        "name": "피자스쿨",
+        "category": "피자"
+      },
+      {
+        "name": "이삭토스트",
+        "category": "토스트"
+      },
+      {
+        "name": "교수회관식당",
+        "category": "학교식당"
+      },
+      {
+        "name": "인문관식당",
+        "category": "학교식당"
+      }
+    ]
+  },
+  "global": {
+    "campus": "글로벌캠퍼스",
+    "restaurants": [
+      {
+        "name": "매취랑",
+        "category": "한식"
+      },
+      {
+        "name": "피자보이",
+        "category": "피자"
+      },
+      {
+        "name": "야미마라탕",
+        "category": "마라탕"
+      },
+      {
+        "name": "하오츠양꼬치",
+        "category": "중식"
+      },
+      {
+        "name": "엄마손칼국수",
+        "category": "한식"
+      },
+      {
+        "name": "장호덕손만두",
+        "category": "한식"
+      },
+      {
+        "name": "이태리 식당",
+        "category": "양식"
+      },
+      {
+        "name": "호가그릴",
+        "category": "고기"
+      },
+      {
+        "name": "정밀",
+        "category": "한식"
+      },
+      {
+        "name": "로뎀식당",
+        "category": "한식"
+      },
+      {
+        "name": "성수식당",
+        "category": "한식"
+      },
+      {
+        "name": "리오브리또",
+        "category": "멕시칸"
+      },
+      {
+        "name": "롯데리아",
+        "category": "패스트푸드"
+      },
+      {
+        "name": "맘스터치",
+        "category": "패스트푸드"
+      },
+      {
+        "name": "BHC",
+        "category": "치킨"
+      },
+      {
+        "name": "외대갈매기",
+        "category": "고기"
+      },
+      {
+        "name": "샤브향",
+        "category": "아시안"
+      },
+      {
+        "name": "당신",
+        "category": "양식"
+      },
+      {
+        "name": "육회바른연어",
+        "category": "아시안"
+      },
+      {
+        "name": "마라장룡",
+        "category": "마라탕"
+      },
+      {
+        "name": "큰맘할매순대국",
+        "category": "한식"
+      },
+      {
+        "name": "춘천닭갈비",
+        "category": "한식"
+      },
+      {
+        "name": "고기어때",
+        "category": "고기"
+      },
+      {
+        "name": "동대문엽기떡볶이",
+        "category": "분식"
+      },
+      {
+        "name": "고인돌횟집",
+        "category": "회"
+      },
+      {
+        "name": "두찜",
+        "category": "한식"
+      },
+      {
+        "name": "진성곱창",
+        "category": "한식"
+      },
+      {
+        "name": "황소숯불생막창",
+        "category": "한식"
+      },
+      {
+        "name": "대만족",
+        "category": "한식"
+      },
+      {
+        "name": "명수당분식",
+        "category": "분식"
+      },
+      {
+        "name": "뼈해장국순대국집",
+        "category": "한식"
+      },
+      {
+        "name": "멕시카나치킨",
+        "category": "치킨"
+      },
+      {
+        "name": "철뚝집",
+        "category": "고기"
+      },
+      {
+        "name": "초원얼크니샤브샤브칼국수",
+        "category": "한식"
+      },
+      {
+        "name": "피자스쿨",
+        "category": "피자"
+      },
+      {
+        "name": "맛나바지락칼국수",
+        "category": "면"
+      },
+      {
+        "name": "날으는김밥",
+        "category": "분식"
+      },
+      {
+        "name": "상원",
+        "category": "중식"
+      },
+      {
+        "name": "모현각",
+        "category": "중식"
+      },
+      {
+        "name": "우리할매떡볶이",
+        "category": "분식"
+      },
+      {
+        "name": "인생제육",
+        "category": "한식"
+      },
+      {
+        "name": "BBQ",
+        "category": "치킨"
+      },
+      {
+        "name": "신전떡볶이",
+        "category": "분식"
+      },
+      {
+        "name": "교촌치킨",
+        "category": "치킨"
+      },
+      {
+        "name": "진성부대찌개",
+        "category": "한식"
+      },
+      {
+        "name": "전설의치킨",
+        "category": "치킨"
+      },
+      {
+        "name": "백채김치찌개",
+        "category": "한식"
+      },
+      {
+        "name": "윤아네집밥",
+        "category": "한식"
+      },
+      {
+        "name": "고기앞으로백암이네",
+        "category": "고기"
+      },
+      {
+        "name": "제일남원추어탕",
+        "category": "한식"
+      },
+      {
+        "name": "미가초밥",
+        "category": "일식"
+      },
+      {
+        "name": "홍's",
+        "category": "돈가스"
+      },
+      {
+        "name": "기영이숯불두마리치킨",
+        "category": "치킨"
+      },
+      {
+        "name": "맛나옹심이메밀칼국수",
+        "category": "면"
+      },
+      {
+        "name": "미쳐버린파닭",
+        "category": "치킨"
+      },
+      {
+        "name": "피나치공 용인모현외대점",
+        "category": "피자"
+      },
+      {
+        "name": "맘스터치 (후생관 3층)",
+        "category": "학교식당"
+      },
+      {
+        "name": "까르보네 (어문관1층)",
+        "category": "학교식당"
+      },
+      {
+        "name": "학생식당 (후생관 1층)",
+        "category": "학교식당"
+      },
+      {
+        "name": "바비든든 (후생관 1층)",
+        "category": "학교식당"
+      },
+      {
+        "name": "쿠킹마마 (후생관 2층)",
+        "category": "학교식당"
+      },
+      {
+        "name": "교직원식당 (후생관 2층)",
+        "category": "학교식당"
+      },
+      {
+        "name": "기숙사식당 (기숙사)",
+        "category": "학교식당"
+      },
+      {
+        "name": "아리랑덮밥 (어문관 1층)",
+        "category": "학교식당"
+      },
+      {
+        "name": "헬로밀 (어문관 1층)",
+        "category": "학교식당"
+      },
+      {
+        "name": "낙지도가",
+        "category": "한식"
+      },
+      {
+        "name": "쏘자토스트",
+        "category": "샐러드/샌드위치/토스트"
+      },
+      {
+        "name": "이백장돈가스",
+        "category": "돈가스"
+      },
+      {
+        "name": "역전우동0410 용인외대점",
+        "category": "면"
+      },
+      {
+        "name": "왕산돈까스",
+        "category": "돈가스"
+      },
+      {
+        "name": "용인면옥",
+        "category": "면"
+      },
+      {
+        "name": "한솔상회",
+        "category": "한식"
+      },
+      {
+        "name": "마미쿡",
+        "category": "햄버거"
+      },
+      {
+        "name": "치킨마루",
+        "category": "치킨"
+      },
+      {
+        "name": "보나리체타",
+        "category": "피자"
+      }
+    ]
+  }
+}

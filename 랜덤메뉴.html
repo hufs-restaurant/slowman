@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/common.css">
   <script src="js/restaurant-utils.js" defer></script>
+  <script src="js/gemini-ai.js" defer></script>
   <style>
     .random-menu-section {
       padding: 3rem 1rem;
@@ -177,7 +178,8 @@
         </div>
       </div>
 
-      <div class="back-button">
+      <div class="back-button" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <button onclick="showAIRecommendationModal()" class="btn btn-primary">🤖 AI 식당 추천</button>
         <a href="맛집외대통합3탄.html" class="btn btn-secondary">🏠 홈으로 돌아가기</a>
       </div>
     </section>

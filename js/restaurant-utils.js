@@ -240,16 +240,41 @@ function setupSearchFunctionality() {
 }
 
 // 검색 결과 표시
-function displaySearchResults(results, campus) {
+function displaySearchResults(results) {
     const searchResults = document.getElementById('search-results');
     if (!searchResults) return;
 
-    searchResults.innerHTML = results.map(restaurant => `
-        <div class="search-result-item" onclick="restaurantManager.showRestaurantModal('${restaurant.name}', '${campus}')">
-            <div class="search-result-name">${restaurant.name}</div>
-            <div class="search-result-category">${restaurant.category || '카테고리 없음'}</div>
-        </div>
-    `).join('');
+    // 캠퍼스별로 그룹화
+    const seoulResults = results.filter(r => r.campus === 'seoul');
+    const globalResults = results.filter(r => r.campus === 'global');
+
+    let html = '';
+
+    // 서울캠퍼스 결과
+    if (seoulResults.length > 0) {
+        html += '<div style="margin-bottom: 1rem;"><div style="color: var(--hufs-gold); font-weight: 600; margin-bottom: 0.5rem; padding-left: 0.5rem;">📍 서울캠퍼스</div>';
+        html += seoulResults.map(restaurant => `
+            <div class="search-result-item" onclick="restaurantManager.showRestaurantModal('${restaurant.name.replace(/'/g, "\\'")}', '${restaurant.campus}')">
+                <div class="search-result-name">${restaurant.name}</div>
+                <div class="search-result-category">${restaurant.category || '카테고리 없음'}</div>
+            </div>
+        `).join('');
+        html += '</div>';
+    }
+
+    // 글로벌캠퍼스 결과
+    if (globalResults.length > 0) {
+        html += '<div><div style="color: var(--hufs-gold); font-weight: 600; margin-bottom: 0.5rem; padding-left: 0.5rem;">🌍 글로벌캠퍼스</div>';
+        html += globalResults.map(restaurant => `
+            <div class="search-result-item" onclick="restaurantManager.showRestaurantModal('${restaurant.name.replace(/'/g, "\\'")}', '${restaurant.campus}')">
+                <div class="search-result-name">${restaurant.name}</div>
+                <div class="search-result-category">${restaurant.category || '카테고리 없음'}</div>
+            </div>
+        `).join('');
+        html += '</div>';
+    }
+
+    searchResults.innerHTML = html;
 }
 
 // 현재 캠퍼스 감지
