@@ -288,23 +288,24 @@ async function getAIRecommendation() {
         return;
     }
 
-    // API 키 확인 (실제로는 서버를 통해야 함)
-    const apiKey = prompt('Gemini API 키를 입력해주세요 (보안상 서버를 통한 구현 권장):');
-    if (!apiKey) {
-        alert('API 키가 필요합니다.');
-        return;
-    }
+    const apiBase = (typeof window !== 'undefined' && window.GEMINI_API_BASE) || '';
+    const apiUrl = apiBase ? `${apiBase}/api/gemini/recommend` : '/api/gemini/recommend';
 
-    geminiAI.setApiKey(apiKey);
-
-    // UI 업데이트
     recommendBtn.disabled = true;
     recommendBtn.textContent = '추천 중...';
     loadingDiv.style.display = 'block';
     resultsDiv.style.display = 'none';
 
     try {
-        const result = await geminiAI.recommendRestaurant(prompt, campus);
+        const res = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt, campus }),
+        });
+        const result = await res.json();
+        if (!res.ok) {
+            throw new Error(result.error || result.message || `서버 오류 (${res.status})`);
+        }
         
         // 결과 표시
         if (result.recommendations && result.recommendations.length > 0) {

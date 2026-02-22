@@ -194,7 +194,9 @@ function setupRestaurantNameClicks() {
     resultElements.forEach(element => {
         element.style.cursor = 'pointer';
         element.addEventListener('click', function() {
-            const restaurantName = this.textContent.trim();
+            let restaurantName = this.textContent.trim();
+            // 글로벌캠퍼스 결과는 "이름(카테고리)" 형식으로 표시됨 → 괄호 부분 제거 후 조회
+            restaurantName = restaurantName.replace(/\s*\([^)]*\)\s*$/, '').trim();
             if (restaurantName && !this.classList.contains('empty')) {
                 const campus = this.id === 'menu-result1' ? 'seoul' : 'global';
                 restaurantManager.showRestaurantModal(restaurantName, campus);
