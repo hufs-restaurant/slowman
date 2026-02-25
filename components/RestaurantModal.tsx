@@ -58,6 +58,45 @@ export default function RestaurantModal({
               <span className="restaurant-info-label">캠퍼스:</span>
               <span className="restaurant-info-value">{campusName}</span>
             </div>
+            {restaurant.address && (
+              <div className="restaurant-info-item">
+                <span className="restaurant-info-label">주소:</span>
+                <span className="restaurant-info-value">{restaurant.address}</span>
+              </div>
+            )}
+            {restaurant.phone && (
+              <div className="restaurant-info-item">
+                <span className="restaurant-info-label">전화:</span>
+                <span className="restaurant-info-value">{restaurant.phone}</span>
+              </div>
+            )}
+            {restaurant.rating != null && (
+              <div className="restaurant-info-item">
+                <span className="restaurant-info-label">평점:</span>
+                <span className="restaurant-info-value">
+                  {restaurant.rating}/5
+                  {restaurant.review_count != null && ` (리뷰 ${restaurant.review_count}개)`}
+                </span>
+              </div>
+            )}
+            {restaurant.opening_hours && (
+              <div className="restaurant-info-item">
+                <span className="restaurant-info-label">영업시간:</span>
+                <span className="restaurant-info-value">{restaurant.opening_hours}</span>
+              </div>
+            )}
+            {restaurant.status && (
+              <div className="restaurant-info-item">
+                <span className="restaurant-info-label">상태:</span>
+                <span className="restaurant-info-value">{restaurant.status}</span>
+              </div>
+            )}
+            {restaurant.price_range && (
+              <div className="restaurant-info-item">
+                <span className="restaurant-info-label">가격대:</span>
+                <span className="restaurant-info-value">{restaurant.price_range}</span>
+              </div>
+            )}
           </div>
           <div className="modal-actions">
             <a

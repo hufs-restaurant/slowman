@@ -39,6 +39,9 @@ export default function RestaurantCard({
         <div className="search-result-name">{restaurant.name}</div>
         <div className="search-result-category">
           {restaurant.category || "카테고리 없음"}
+          {restaurant.rating != null && (
+            <span className="search-result-rating"> ★ {restaurant.rating}</span>
+          )}
         </div>
         <div className="search-result-actions" onClick={(e) => e.stopPropagation()}>
           <a
@@ -67,7 +70,10 @@ export default function RestaurantCard({
   return (
     <article className="card" role="listitem">
       <h3>{restaurant.name}</h3>
-      <p className="text-silver">{restaurant.category || "카테고리 없음"}</p>
+      <p className="text-silver">
+        {restaurant.category || "카테고리 없음"}
+        {restaurant.rating != null && ` ★ ${restaurant.rating}`}
+      </p>
       <div className="modal-actions">
         <a href={urls.naver} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-small">
           네이버지도
