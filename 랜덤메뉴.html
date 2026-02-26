@@ -126,9 +126,69 @@
         }
     </script>
 
- 
+    <script>
+        // 전역 변수로 현재 뜬 메뉴 저장
+        let currentMenuGlobal = ""; 
+
+        function pickRandomMenuGlobal() {
+            const menus = ["매취랑(한식)","피자보이(피자)","야미마라탕(마라탕)","하오츠양꼬치(중식)","엄마손칼국수(한식)","장호덕손만두(한식)","이태리 식당(양식)","호가그릴(고기)","정밀(한식)","로뎀식당(한식)","성수식당(한식)","리오브리또(멕시칸)","롯데리아(패스트푸드)","맘스터치(패스트푸드)","BHC(치킨)","외대갈매기(고기)","샤브향(아시안)","당신(양식)","육회바른연어(아시안)","마라장룡(마라탕)","큰맘할매순대국(한식)","춘천닭갈비(한식)","고기어때(고기)","동대문엽기떡볶이(분식)","고인돌횟집(회)","두찜(한식)","진성곱창(한식)","황소숯불생막창(한식)","대만족(한식)","명수당분식(분식)","뼈해장국순대국집(한식)","멕시카나치킨(치킨)","철뚝집(고기)","초원얼크니샤브샤브칼국수(한식)","피자스쿨(피자)","맛나바지락칼국수(면)","날으는김밥(분식)","상원(중식)","모현각(중식)","우리할매떡볶이(분식)","인생제육(한식)","BBQ(치킨)","신전떡볶이(분식)","교촌치킨(치킨)","진성부대찌개(한식)","전설의치킨(치킨)","백채김치찌개(한식)","윤아네집밥(한식)","고기앞으로백암이네(고기)","제일남원추어탕(한식)","미가초밥(일식)","홍's(돈가스)","기영이숯불두마리치킨(치킨)","맛나옹심이메밀칼국수(면)","미쳐버린파닭(치킨)","피나치공 용인모현외대점(피자)","맘스터치 (후생관 3층)(학교 안)","까르보네 (어문관1층)(학교 안)","학생식당 (후생관 1층)(학교 안)","바비든든 (후생관 1층)(학교 안)","쿠킹마마 (후생관 2층)(학교 안)","교직원식당 (후생관 2층)(학교 안)","기숙사식당 (기숙사)(학교 안)","아리랑덮밥 (어문관 1층)(학교 안)","헬로밀 (어문관 1층)(학교 안)","낙지도가(한식)","쏘자토스트(샐러드/샌드위치/토스트)","이백장돈가스(돈가스)","역전우동0410 용인외대점(면)","왕산돈까스(돈가스)","용인면옥(면)","한솔상회(한식)","마미쿡(햄버거)","치킨마루(치킨)","보나리체타(피자)"];
+            const randomIndex = Math.floor(Math.random() * menus.length);
+            currentMenuGlobal = menus[randomIndex];
+            
+            // 1. 랜덤 메뉴 텍스트 표시
+            document.getElementById("menu-result2").textContent = currentMenuGlobal;
+            
+            // 2. 가격 버튼 표시 (display: block으로 전환)
+            document.getElementById("price-btn2").style.display = "inline-block";
+            
+            // 3. 기존 제미나이 출력 내용 숨기기 및 초기화
+            const outputDiv = document.getElementById("gemini-output2");
+            outputDiv.style.display = "none";
+            outputDiv.textContent = "";
+        }
+
+        async function fetchGeminiData() {
+            const outputDiv = document.getElementById("gemini-output2");
+            outputDiv.style.display = "block";
+            outputDiv.innerHTML = "🤖 <b>AI가 정보를 검색 중입니다... (약 5~10초 소요)</b>";
+            
+            // ★ 방금 복사한 Vercel 주소로 변경해주세요! (마지막에 /api/gemini 필수)
+            // 예시: const url = "https://slowman.vercel.app/api/gemini";
+            const url = "https://slowman.vercel.app/api/gemini";
+            
+            try {
+                // 제미나이가 아니라, 우리가 만든 안전한 Vercel 서버로 요청을 보냄
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ menu: currentMenuGlobal }) // 뽑힌 메뉴 이름 전달
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`서버 요청 실패: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Vercel에서 받아온 제미나이의 텍스트 답변
+                const textResult = data.candidates[0].content.parts[0].text;
+                
+                // 마크다운 **텍스트**를 HTML의 <b>태그로 변환하여 출력
+                const formattedText = textResult.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+                outputDiv.innerHTML = formattedText;
+                
+            } catch (error) {
+                console.error(error);
+                outputDiv.innerHTML = "⚠️ 정보를 불러오는 데 실패했습니다.<br>네트워크 오류이거나 서버에 문제가 있습니다.";
+            }
+        }
+    </script>
+    
 </body>
 </html>
+
+
+
 
 
 
