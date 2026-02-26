@@ -145,7 +145,7 @@
     <button class="button" onclick="pickRandomMenuSeoul()">Seoul<br>Campus</button>
     <div class="menu-result-row" id="seoul-result-row">
         <span class="menu-text" id="menu-result1"></span>
-        <button class="ai-price-btn" id="ai-btn-seoul" onclick="fetchAIPrice('seoul')">가격</button>
+        <button class="ai-price-btn" id="ai-btn-seoul" onclick="fetchAIPrice('seoul')">가격 with AI</button>
     </div>
     <div class="ai-result-box" id="ai-result-seoul"></div>
     
@@ -153,7 +153,7 @@
     <button class="button" onclick="pickRandomMenuGlobal()">Global<br>Campus</button>
     <div class="menu-result-row" id="global-result-row">
         <span class="menu-text" id="menu-result2"></span>
-        <button class="ai-price-btn" id="ai-btn-global" onclick="fetchAIPrice('global')">가격</button>
+        <button class="ai-price-btn" id="ai-btn-global" onclick="fetchAIPrice('global')">가격 with AI</button>
     </div>
     <div class="ai-result-box" id="ai-result-global"></div>
 
@@ -247,7 +247,10 @@
                 );
 
                 if (!response.ok) {
-                    throw new Error(`API 오류: ${response.status}`);
+                    const errorBody = await response.json().catch(() => ({}));
+                    const errMsg = errorBody.error?.message || `HTTP ${response.status}`;
+                    console.error("Gemini API 오류:", errorBody);
+                    throw new Error(errMsg);
                 }
 
                 const data = await response.json();
@@ -261,7 +264,8 @@
                 resultBox.innerHTML = formatted;
 
             } catch (error) {
-                resultBox.innerHTML = `<span style="color:#ff6b6b;">❌ 오류 발생: ${error.message}</span><br><br>💡 API 키를 확인해주세요. 코드 내 <code>YOUR_GEMINI_API_KEY</code>를 실제 Gemini API 키로 교체해야 합니다.`;
+                console.error("fetchAIPrice 오류:", error);
+                resultBox.innerHTML = `<span style="color:#ff6b6b;">❌ 오류 발생: ${error.message}</span><br><br>💡 Gemini API 키가 유효한지 확인해주세요. 키가 만료되었거나 할당량이 초과되었을 수 있습니다.`;
             }
         }
     </script>
@@ -269,11 +273,3 @@
  
 </body>
 </html>
-
- 
-</body>
-</html>
-
-
-
-
