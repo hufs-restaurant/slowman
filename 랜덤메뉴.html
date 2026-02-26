@@ -100,6 +100,17 @@
     <button class="button" onclick="pickRandomMenuGlobal()">Global<br>Campus</button>
     <p id="menu-result2"></p>
 
+    
+    <!-- 랜덤메뉴 출력 & 가격 버튼 (flex로 가로 정렬) -->
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 15px; min-height: 40px;">
+        <p id="menu-result2" style="margin: 0; font-size: 18px; font-weight: bold;"></p>
+        <!-- 가격 버튼: 크기를 줄이고 랜덤메뉴 텍스트 크기에 맞춤, 초기에는 숨김 처리 -->
+        <button id="price-btn2" class="button" style="display: none; padding: 5px 15px; font-size: 16px; border-width: 1.5px;" onclick="fetchGeminiData()">가격</button>
+    </div>
+
+    <!-- 제미나이 결과가 출력될 공간 -->
+    <div id="gemini-output2" style="display: none; margin-top: 15px; padding: 20px; background-color: rgba(255, 255, 255, 0.1); border-radius: 8px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6; font-size: 15px; white-space: pre-wrap;"></div>
+
 
 
     
@@ -178,6 +189,7 @@
     
 </body>
 </html>
+
 
 
 
