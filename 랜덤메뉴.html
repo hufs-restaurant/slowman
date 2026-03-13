@@ -98,7 +98,11 @@
     <p id="menu-result1"></p>
     
     <button class="button" onclick="pickRandomMenuGlobal()">Global<br>Campus</button>
-    <p id="menu-result2"></p>
+    <div id="global-result-container" style="display:flex; justify-content:center; align-items:center; gap:12px; margin-top:10px;">
+        <p id="menu-result2" style="margin:0;"></p>
+        <button id="ai-price-btn" class="button" style="display:none; padding:8px 16px; font-size:inherit;" onclick="fetchAIPrice()">가격 with AI</button>
+    </div>
+    <div id="ai-result" style="text-align:left; max-width:600px; margin:16px auto; white-space:pre-wrap; color:#FFF; font-size:15px; line-height:1.7;"></div>
 
 
 
@@ -122,7 +126,33 @@
         function pickRandomMenuGlobal() {
             const menus = ["매취랑(한식)","피자보이(피자)","야미마라탕(마라탕)","하오츠양꼬치(중식)","엄마손칼국수(한식)","장호덕손만두(한식)","이태리 식당(양식)","호가그릴(고기)","정밀(한식)","로뎀식당(한식)","성수식당(한식)","리오브리또(멕시칸)","롯데리아(패스트푸드)","맘스터치(패스트푸드)","BHC(치킨)","외대갈매기(고기)","샤브향(아시안)","당신(양식)","육회바른연어(아시안)","마라장룡(마라탕)","큰맘할매순대국(한식)","춘천닭갈비(한식)","고기어때(고기)","동대문엽기떡볶이(분식)","고인돌횟집(회)","두찜(한식)","진성곱창(한식)","황소숯불생막창(한식)","대만족(한식)","명수당분식(분식)","뼈해장국순대국집(한식)","멕시카나치킨(치킨)","철뚝집(고기)","초원얼크니샤브샤브칼국수(한식)","피자스쿨(피자)","맛나바지락칼국수(면)","날으는김밥(분식)","상원(중식)","모현각(중식)","우리할매떡볶이(분식)","인생제육(한식)","BBQ(치킨)","신전떡볶이(분식)","교촌치킨(치킨)","진성부대찌개(한식)","전설의치킨(치킨)","백채김치찌개(한식)","윤아네집밥(한식)","고기앞으로백암이네(고기)","제일남원추어탕(한식)","미가초밥(일식)","홍's(돈가스)","기영이숯불두마리치킨(치킨)","맛나옹심이메밀칼국수(면)","미쳐버린파닭(치킨)","피나치공 용인모현외대점(피자)","맘스터치 (후생관 3층)(학교 안)","까르보네 (어문관1층)(학교 안)","학생식당 (후생관 1층)(학교 안)","바비든든 (후생관 1층)(학교 안)","쿠킹마마 (후생관 2층)(학교 안)","교직원식당 (후생관 2층)(학교 안)","기숙사식당 (기숙사)(학교 안)","아리랑덮밥 (어문관 1층)(학교 안)","헬로밀 (어문관 1층)(학교 안)","낙지도가(한식)","쏘자토스트(샐러드/샌드위치/토스트)","이백장돈가스(돈가스)","역전우동0410 용인외대점(면)","왕산돈까스(돈가스)","용인면옥(면)","한솔상회(한식)","마미쿡(햄버거)","치킨마루(치킨)","보나리체타(피자)"];
             const randomIndex = Math.floor(Math.random() * menus.length);
-            document.getElementById("menu-result2").textContent =  menus[randomIndex];
+            document.getElementById("menu-result2").textContent = menus[randomIndex];
+            document.getElementById("ai-price-btn").style.display = "inline-block";
+            document.getElementById("ai-result").textContent = "";
+        }
+
+        async function fetchAIPrice() {
+            var menuText = document.getElementById("menu-result2").textContent;
+            if (!menuText) return;
+            var resultDiv = document.getElementById("ai-result");
+            resultDiv.textContent = "⏳ AI가 정보를 검색 중입니다...";
+            var k = atob("QUl6YVN5Q1JxX2pKYlR0UEdjOFB5cWRuWnlNbFFjUFdHSkplY0pR");
+            var prompt = "한국외국어대학교 글로벌캠퍼스(용인) 근처 맛집 '" + menuText + "'에 대해 구글지도에서 검색해서 아래 형식으로 알려줘:\n\n1. 주요메뉴 (3~5개)\n2. 각 주요메뉴 별 가격대\n3. 가성비메뉴 추천\n4. 위치(구글지도 주소)\n\n간결하게 답변해줘.";
+            try {
+                var res = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + k, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                var data = await res.json();
+                if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+                    resultDiv.textContent = data.candidates[0].content.parts[0].text;
+                } else {
+                    resultDiv.textContent = "❌ AI 응답을 가져올 수 없습니다.";
+                }
+            } catch (e) {
+                resultDiv.textContent = "❌ 오류 발생: " + e.message;
+            }
         }
     </script>
 
